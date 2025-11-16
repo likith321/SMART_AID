@@ -2,6 +2,7 @@ package com.example.smartfirstaid;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.Toast;
@@ -50,6 +51,21 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 100); // show at bottom
             toast.show();
+            startActivity(intent);
+        });
+        symptom_check.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SymptomChecker.class);
+            Toast toast = Toast.makeText(HomeActivity.this,
+                    "Symptom Checker ???",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 100); // show at bottom
+            toast.show();
+            startActivity(intent);
+        });
+
+        training.setOnClickListener(v -> {
+            String url = "https://youtu.be/kFbvJkbUukQ?si=uqLAQg-tEFfY59NB";
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intent);
         });
     }

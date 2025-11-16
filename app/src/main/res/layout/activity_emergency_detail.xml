@@ -20,14 +20,15 @@
         android:layout_height="56dp"
         android:visibility="gone"
         app:layout_anchorGravity="center"
-        android:layout_gravity="center"
-        />
+        android:layout_gravity="center" />
 
-    <!-- Scrollable content -->
+    <!-- Scrollable content; reserve space at bottom for the carousel -->
     <ScrollView
+        android:id="@+id/scroll_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
+        android:layout_marginBottom="160dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -54,8 +55,7 @@
                 android:text="Start Voice Guidance"
                 android:layout_marginTop="12dp"
                 style="@style/Widget.MaterialComponents.Button"
-                app:cornerRadius="16dp"
-                />
+                app:cornerRadius="16dp" />
 
             <!-- DO section -->
             <com.google.android.material.card.MaterialCardView
@@ -128,4 +128,14 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Bottom carousel: ViewPager2 showing horizontal images -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpImages"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="bottom"
+        android:clipToPadding="false"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

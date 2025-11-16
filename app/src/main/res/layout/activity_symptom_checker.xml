@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#96FFA9">
+
+    <!-- Header / Title -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FDA1A1"
+        android:backgroundTint="#E69B9B"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Symptom Checker"
+        android:textAlignment="center"
+        android:textColor="#020B40"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Scrollable container for dynamic symptom fields -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toTopOf="@id/button_add_symptom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/symptom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter symptoms below. Use +add symptom to add more."
+                android:paddingBottom="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- + add symptom button -->
+    <Button
+        android:id="@+id/button_add_symptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#C64B08"
+        android:fontFamily="sans-serif-thin"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="+ add symptom"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_diagnose"
+        app:layout_constraintEnd_toStartOf="@+id/button_remove_symptom"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <!-- - remove symptom button (NEW) -->
+    <Button
+        android:id="@+id/button_remove_symptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#850606"
+        android:fontFamily="sans-serif-thin"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="- remove symptom"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_diagnose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@id/button_add_symptom"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <!-- Diagnose button -->
+    <Button
+        android:id="@+id/button_diagnose"
+        android:layout_width="0dp"
+        android:layout_height="77dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="#5ECDFF"
+        android:fontFamily="sans-serif"
+        android:text="Diagnose"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
